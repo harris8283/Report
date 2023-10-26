@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        帳號：
+                    </th>
+                    <td>
+                        <input type="text" v-model="UserName" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        密碼：
+                    </th>
+                    <td>
+                        <input type="password" v-model="PassWord" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <input type="button" value="登入" />
+            <input type="button" value="註冊" />
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/LogIn.js"></script>
