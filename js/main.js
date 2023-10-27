@@ -7,6 +7,8 @@ var app = new Vue({
 
     },
     methods: {
-
+        LogIn: function() {
+            window.location.href = "LogIn.html";
+        },
     }
 })
