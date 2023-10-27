@@ -9,10 +9,10 @@ var app = new Vue({
             var Url = "https://www.HaoShiang.somee.com/Public/LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
             this.$http.get(Url).then(
                 function(response){
-                    var res = JSON.parse(response);
+                    var res = response.body;
                     alert(res.Message);
                     if(res.Code == "0"){
-                        window.location.href = Index.html;
+                        window.location.href = "Index.html";
                     }
                 },
                 function(error){
