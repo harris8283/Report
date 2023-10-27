@@ -6,7 +6,7 @@ var app = new Vue({
     },
     methods: {
         LogIn: function() {
-            var Url = "http://www.HaoShiang.somee.com/Public/LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
+            var Url = "https://www.HaoShiang.somee.com/Public/LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
             this.$http.get(Url).then(
                 function(response){
                     var res = JSON.parse(response);
