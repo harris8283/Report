@@ -9,13 +9,12 @@ var app = new Vue({
     },
     methods: {
         init: function() {
-            if(sessionStorage.getItem("GUID") != ""){
-                this.GUID = sessionStorage.getItem("GUID");
+            if(localStorage.getItem("GUID") != ""){
+                this.GUID = localStorage.getItem("GUID");
             }
-            if(sessionStorage.getItem("ChinName") != ""){
-                this.ChinName = sessionStorage.getItem("ChinName");
+            if(localStorage.getItem("ChinName") != ""){
+                this.ChinName = localStorage.getItem("ChinName");
             }
-            sessionStorage.clear();
         },
         LogIn: function() {
             window.location.href = "LogIn.html";
