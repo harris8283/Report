@@ -19,5 +19,9 @@ var app = new Vue({
         LogIn: function() {
             window.location.href = "LogIn.html";
         },
+        LogOut: function() {
+            sessionStorage.clear();
+            window.location.href = "Index.html";
+        },
     }
 })

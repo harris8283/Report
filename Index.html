@@ -9,7 +9,8 @@
     <div id="app">
         {{GUID}}
         {{ChinName}}
-        <input type="button" value="登入" v-on:click="LogIn()" />
+        <input type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
+        <input type="button" value="登出" v-on:click="LogOut()" v-else />
     </div>
 </body>
 </html>
