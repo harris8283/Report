@@ -9,10 +9,10 @@ var app = new Vue({
     },
     methods: {
         init: function() {
-            if(sessionStorage.getItem("GUID") != ""){
+            if(sessionStorage.getItem("GUID") != null){
                 this.GUID = sessionStorage.getItem("GUID");
             }
-            if(sessionStorage.getItem("ChinName") != ""){
+            if(sessionStorage.getItem("ChinName") != null){
                 this.ChinName = sessionStorage.getItem("ChinName");
             }
         },
