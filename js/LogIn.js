@@ -13,8 +13,8 @@ var app = new Vue({
                     alert(res.Message);
                     if(res.Code == "0"){
                         var res2 = res.Data[0];
-                        localStorage.setItem("GUID", res2.GUID);
-                        localStorage.setItem("ChinName", res2.ChinName);
+                        sessionStorage.setItem("GUID", res2.GUID);
+                        sessionStorage.setItem("ChinName", res2.ChinName);
                         window.location.href = "Index.html";
                     }
                 },
