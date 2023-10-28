@@ -21,6 +21,8 @@ var app = new Vue({
         },
         LogOut: function() {
             sessionStorage.clear();
+            this.GUID = "";
+            this.ChinName = "";
             window.location.href = "Index.html";
         },
     }
