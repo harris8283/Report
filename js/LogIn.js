@@ -10,7 +10,6 @@ var app = new Vue({
             this.$http.get(Url).then(
                 function(response){
                     var res = response.body;
-                    alert(res.Message);
                     if(res.Code == "0"){
                         var res2 = res.Data[0];
                         sessionStorage.setItem("GUID", res2.GUID);
