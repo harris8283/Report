@@ -1,5 +1,5 @@
-var main = new Vue({
-    el: '#main',
+var Index = new Vue({
+    el: '#Index',
     data: {
         GUID: '',
         ChinName: '',
