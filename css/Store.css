@@ -15,3 +15,21 @@ body{
     margin: 1em;
     font-size: 1.5em;
 }
+.item {
+    width: auto;
+}
+.item-row {
+    display: flex;
+    width: 100%;
+}
+.item-column {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+img {
+    margin: 0 0 1em 0;
+}
