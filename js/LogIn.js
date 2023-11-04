@@ -1,5 +1,5 @@
-var app = new Vue({
-    el: '#app',
+var LogIn = new Vue({
+    el: '#LogIn',
     data: {
         UserName: '',
         PassWord: '',

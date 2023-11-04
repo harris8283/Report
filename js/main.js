@@ -1,5 +1,5 @@
-var app = new Vue({
-    el: '#app',
+var main = new Vue({
+    el: '#main',
     data: {
         GUID: '',
         ChinName: '',
