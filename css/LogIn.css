@@ -1,6 +1,3 @@
-*{
-    padding: 5px;
-}
 body{
     padding: 0;
     margin: 0;
@@ -23,7 +20,7 @@ body{
     flex-direction: column;
 }
 .title {
-    font-size: 30pt;
+    font-size: 1.875em;
 }
 .input-box {
     width: 30rem;

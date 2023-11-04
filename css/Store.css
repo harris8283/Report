@@ -1,0 +1,17 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.store-main {
+    display: flex;
+    justify-content: center;
+}
+.menu {
+    display: flex;
+    background-color: gray;
+    flex-direction: column;
+}
+.menu-item {
+    margin: 1em;
+    font-size: 1.5em;
+}

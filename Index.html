@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="Index">
-        <div>
+        <div class="top-bar">
             <div>
                 <input class="Index-input" type="button" value="賣場" v-on:click="Store()" />
                 <input class="Index-input" type="button" value="熱量計算" v-on:click="History()" />
@@ -18,7 +18,7 @@
                 <input v-show="!IsRegister" class="Index-input" type="button" value="登出" v-on:click="LogOut()" v-else />
             </div>
         </div>
-        <div id="Detail"></div>
+        <div id="Detail" class="detail"></div>
         <div class="footer">
             新興商店
             <span v-if="GUID != ''">，歡迎{{ChinName}}光臨本賣場</span>
