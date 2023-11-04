@@ -11,6 +11,8 @@
             <div>
                 <input class="Index-input" type="button" value="賣場" v-on:click="Store()" />
                 <input class="Index-input" type="button" value="熱量計算" v-on:click="History()" />
+            </div>
+            <div>
                 <input class="Index-input" type="button" value="購物車" v-on:click="ShoppingCart()" />
                 <input v-show="!IsRegister" class="Index-input" type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
                 <input v-show="!IsRegister" class="Index-input" type="button" value="登出" v-on:click="LogOut()" v-else />
