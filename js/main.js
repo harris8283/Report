@@ -15,9 +15,10 @@ var main = new Vue({
             if(sessionStorage.getItem("ChinName") != null){
                 this.ChinName = sessionStorage.getItem("ChinName");
             }
+            $("#Detail").load("Store.html");
         },
         LogIn: function() {
-            window.location.href = "LogIn.html";
+            $("#Detail").load("LogIn.html");
         },
         LogOut: function() {
             sessionStorage.clear();

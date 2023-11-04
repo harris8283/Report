@@ -10,17 +10,15 @@
         <div>
             <div>
                 <input type="button" value="賣場" />
-                <input type="button" value="紀錄" />
+                <input type="button" value="熱量計算" />
                 <input type="button" value="購物車" />
-                <span v-if="GUID != ''">{{ChinName}} 好</span>
                 <input type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
                 <input type="button" value="登出" v-on:click="LogOut()" v-else />
             </div>
         </div>
+        <div id="Detail"></div>
         <div>
-            <table>
-                
-            </table>
+            
         </div>
     </div>
 </body>
