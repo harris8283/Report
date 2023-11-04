@@ -16,6 +16,9 @@ var LogIn = new Vue({
                         sessionStorage.setItem("ChinName", res2.ChinName);
                         window.location.href = "Index.html";
                     }
+                    else{
+                        alert(res.Message)
+                    }
                 },
                 function(error){
                     alert("登入失敗")
