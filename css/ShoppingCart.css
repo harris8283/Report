@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.Cart-table {
+    width: 100%;
+    font-size: 1.5em;
+    background-color: gray;
+    text-align: center;
+}
+.Cart-table tr td {
+    margin: 1em;
+}
+.Cart-td-function {
+    display: flex;
+    justify-content: space-between;
+}
+.Cart-function {
+    size: 1em;
+}
+.Cart-bottom {
+    display: flex;
+    justify-content: center;
+}
+.Cart-bottom input {
+    font-size: 1.5em;
+    margin: 1em;
+}

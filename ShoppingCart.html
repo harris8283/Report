@@ -8,12 +8,24 @@
 <body>
     <div id="ShoppingCart">
         <div>
-            <table>
+            <table class="Cart-table">
                 <tr>
+                    <td></td>
                     <td>
-                       <input type="button" value="-" />
+                        項目
+                    </td>
+                    <td>
+                        金額
+                    </td>
+                    <td>
+                        卡路里
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Cart-td-function">
+                       <input class="Cart-function" type="button" value="-" />
                        1
-                       <input type="button" value="+" /> 
+                       <input class="Cart-function" type="button" value="+" /> 
                     </td>
                     <td>
                         名稱
@@ -40,7 +52,7 @@
                 </tr>
             </table>
         </div>
-        <div>
+        <div class="Cart-bottom">
             <input type="button" value="結帳" />
             <input type="button" value="返回賣場" />
         </div>
@@ -48,6 +60,7 @@
 </body>
 </html>
 
+<link rel="stylesheet" href="css/ShoppingCart.css" />
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
