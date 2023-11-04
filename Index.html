@@ -9,8 +9,8 @@
     <div id="Index">
         <div>
             <div>
-                <input type="button" value="賣場" />
-                <input type="button" value="熱量計算" />
+                <input type="button" value="賣場" v-on:click="Store()" />
+                <input type="button" value="熱量計算" v-on:click="History()" />
                 <input type="button" value="購物車" />
                 <input type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
                 <input type="button" value="登出" v-on:click="LogOut()" v-else />
@@ -18,7 +18,8 @@
         </div>
         <div id="Detail"></div>
         <div>
-            
+            新興商店
+            <span v-if="GUID != ''">，歡迎{{ChinName}}大駕光臨</span>
         </div>
     </div>
 </body>
@@ -27,4 +28,4 @@
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
-<script src="js/main.js"></script>
+<script src="js/Index.js"></script>

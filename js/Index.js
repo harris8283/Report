@@ -26,5 +26,11 @@ var Index = new Vue({
             this.ChinName = "";
             window.location.href = "Index.html";
         },
+        Store: function() {
+            $("#Detail").load("Store.html");
+        },
+        History: function() {
+            $("#Detail").load("History.html");
+        },
     }
 })
