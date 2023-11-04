@@ -1,0 +1,17 @@
+* {
+    padding: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
