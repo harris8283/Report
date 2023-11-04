@@ -1,0 +1,27 @@
+#History {
+    background: #d9d9d9;
+    padding: 2rem;
+}
+
+.date-block {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #A7A7A7; 
+}
+.stock_list {
+    list-style: none;
+    padding: 1rem;
+}
+.stock {
+    display: flex;
+    justify-content:space-between;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: #626262;
+
+}

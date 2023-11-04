@@ -8,45 +8,66 @@
 <body>
     <div id="History">
         <div>
-            <div>
-                起始日：
-                <input type="date" />
-                結束日：
-                <input type="date" />
+            <div class="date-block">
+                <div>
+                    <label for="startdate">起始日：</label>                
+                    <input id="startdate" type="date" />
+                </div>
+                
+                <div>
+                    <label for="enddate">結束日：</label>
+                    <input id="enddate" type="date" />
+                </div>
+                
             </div>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            名稱
-                        </td>
-                        <td>
-                            卡路里
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            名稱
-                        </td>
-                        <td>
-                            卡路里
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            總結
-                        </td>
-                        <td>
-                            卡路里
-                        </td>
-                    </tr>
-                </table>
+
+            <div class="main">
+                <ul class="stock_list">
+                    <li>
+                        <div class="stock">
+                            <div class="name">名稱</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stock">
+                            <div class="name">名稱</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stock">
+                            <div class="name">名稱</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stock">
+                            <div class="name">名稱</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stock">
+                            <div class="name">名稱</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="stock">
+                            <div class="name">總結</div>
+                            <div class="cal">卡路里</div>
+                        </div>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>
 </body>
 </html>
 
+<link rel="stylesheet" href="css/history.css">
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
