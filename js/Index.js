@@ -32,5 +32,8 @@ var Index = new Vue({
         History: function() {
             $("#Detail").load("History.html");
         },
+        ShoppingCart: function() {
+          $("#Detail").load("ShoppingCart.html");  
+        },
     }
 })
