@@ -3,6 +3,7 @@ var Index = new Vue({
     data: {
         GUID: '',
         ChinName: '',
+        IsRegister: false,
     },
     mounted: function() {
         this.init();
@@ -18,21 +19,26 @@ var Index = new Vue({
             $("#Detail").load("Store.html");
         },
         LogIn: function() {
+            this.IsRegister = true;
             $("#Detail").load("LogIn.html");
         },
         LogOut: function() {
+            this.IsRegister = false;
             sessionStorage.clear();
             this.GUID = "";
             this.ChinName = "";
             window.location.href = "Index.html";
         },
         Store: function() {
+            this.IsRegister = false;
             $("#Detail").load("Store.html");
         },
         History: function() {
+            this.IsRegister = false;
             $("#Detail").load("History.html");
         },
         ShoppingCart: function() {
+            this.IsRegister = false;
           $("#Detail").load("ShoppingCart.html");  
         },
     }
