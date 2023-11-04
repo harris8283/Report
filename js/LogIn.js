@@ -3,6 +3,8 @@ var LogIn = new Vue({
     data: {
         UserName: '',
         PassWord: '',
+        Name: '',
+        IsRegister: false,
     },
     methods: {
         LogIn: function() {
@@ -25,6 +27,9 @@ var LogIn = new Vue({
                     console.log(error)
                 }
             )
+        },
+        Register: function() {
+
         },
     },
 })

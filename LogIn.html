@@ -26,11 +26,21 @@
                             <input class="input-box" type="password" v-model="PassWord" />
                         </td>
                     </tr>
+                    <tr v-show="IsRegister">
+                        <th class="title">
+                            中文姓名：
+                        </th>
+                        <td>
+                            <input class="input-box" type="text" v-model="Name" />
+                        </td>
+                    </tr>
                 </table>
             </div>
             <div>
-                <input class="input-button" type="button" value="登入" v-on:click="LogIn()" />
-                <input class="input-button" type="button" value="註冊" />
+                <input v-show="!IsRegister" class="input-button" type="button" value="登入" v-on:click="LogIn()" />
+                <input v-show="!IsRegister" class="input-button" type="button" value="註冊" v-on:click="IsRegister = true" />
+                <input v-show="IsRegister" class="input-button" type="button" value="確定註冊" v-on:click="Register()"/>
+                <input v-show="IsRegister" class="input-button" type="button" value="取消註冊" v-on:click="IsRegister = false;Name = ''" />
             </div>
         </div>
         
