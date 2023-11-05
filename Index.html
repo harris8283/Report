@@ -13,7 +13,7 @@
                 <input class="Index-input" type="button" value="熱量計算" v-on:click="History()" />
             </div>
             <div>
-                <input class="Index-input" type="button" value="購物車" v-on:click="ShoppingCart()" />
+                <i class="fa-solid fa-cart-shopping Index-input" title="購物車" v-on:click="ShoppingCart()"></i>
                 <input v-show="!IsRegister" class="Index-input" type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
                 <input v-show="!IsRegister" class="Index-input" type="button" value="登出" v-on:click="LogOut()" v-else />
             </div>
@@ -28,6 +28,8 @@
 </html>
 
 <link rel="stylesheet" href="css/Index.css" />
+
+<script src="https://kit.fontawesome.com/621c3d4528.js" crossorigin="anonymous"></script>
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
