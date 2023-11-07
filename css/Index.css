@@ -10,7 +10,11 @@ body {
 .top-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #FAE6B1;
+    background-color: #FFA101;
+}
+.top-bar div {
+    display: flex;
+    align-items: center;
 }
 .footer {
     padding: 0.5em;
@@ -23,4 +27,8 @@ body {
 }
 .detail {
     margin: 2em 2em 4em 2em;
+}
+.hover-effect:hover {
+    color: #FAE6B1;
+    text-decoration: underline;
 }

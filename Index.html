@@ -9,13 +9,13 @@
     <div id="Index">
         <div class="top-bar">
             <div>
-                <input class="Index-input" type="button" value="飲料" v-on:click="Store()" />
-                <input class="Index-input" type="button" value="熱量計算" v-on:click="History()" />
+                <span class="Index-input hover-effect" v-on:click="Store()">飲料</span>
+                <span class="Index-input hover-effect" v-on:click="History()">熱量計算</span>
             </div>
             <div>
                 <i class="fa-solid fa-cart-shopping Index-input" title="購物車" v-on:click="ShoppingCart()"></i>
-                <input v-show="!IsRegister" class="Index-input" type="button" value="登入" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''" />
-                <input v-show="!IsRegister" class="Index-input" type="button" value="登出" v-on:click="LogOut()" v-else />
+                <span v-show="!IsRegister" class="Index-input hover-effect" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''">登入</span>
+                <span v-show="!IsRegister" class="Index-input hover-effect" v-on:click="LogOut()" v-else>登出</span>
             </div>
         </div>
         <div id="Detail" class="detail"></div>
