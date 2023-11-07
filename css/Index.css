@@ -9,7 +9,7 @@ body {
 .top-bar {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(152, 151, 151);
+    background-color: #FAE6B1;
 }
 .footer {
     padding: 0.5em;
@@ -17,7 +17,8 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgb(152, 151, 151);
+    background-color: #31525B;
+    color: #FFFFFF;
 }
 .detail {
     margin: 2em 2em 4em 2em;
