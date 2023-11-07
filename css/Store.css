@@ -8,7 +8,7 @@ body{
 }
 .menu {
     display: flex;
-    background-color: gray;
+    background-color: #FFA101;
     flex-direction: column;
 }
 .menu-item {
@@ -18,6 +18,7 @@ body{
 }
 .item {
     width: auto;
+    background-color: #B3DEE5;
 }
 .item-row {
     display: flex;
