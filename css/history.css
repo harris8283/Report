@@ -10,18 +10,11 @@
 
 .main {
     width: 90%;
-    margin: 0 auto;
+    margin: 1em auto;
     background-color: #A7A7A7; 
 }
 .stock_list {
-    list-style: none;
+    text-align: center;
+    width: 100%;
     padding: 1rem;
-}
-.stock {
-    display: flex;
-    justify-content:space-between;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    background-color: #626262;
-
 }
