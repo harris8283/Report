@@ -29,7 +29,22 @@ var LogIn = new Vue({
             )
         },
         Register: function() {
-
+            var Url = "https://www.HaoShiang.somee.com/Public/Register.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord + "&ChinName=" + this.ChinNme;
+            this.$http.get(Url).then(
+                function(response){
+                    var res = response.body;
+                    if(res.Code == "0"){
+                        this.LogIn();
+                    }
+                    else{
+                        alert(res.Message)
+                    }
+                },
+                function(error){
+                    alert("註冊失敗")
+                    console.log(error)
+                }
+            )
         },
     },
 })
