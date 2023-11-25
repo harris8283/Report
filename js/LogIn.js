@@ -3,7 +3,7 @@ var LogIn = new Vue({
     data: {
         UserName: '',
         PassWord: '',
-        Name: '',
+        ChinName: '',
         IsRegister: false,
     },
     methods: {
@@ -11,7 +11,7 @@ var LogIn = new Vue({
             var Url = "https://www.HaoShiang.somee.com/Public/LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
             this.$http.get(Url).then(
                 function(response){
-                    var res = response.body;
+                    var res = response.data;
                     if(res.Code == "0"){
                         var res2 = res.Data[0];
                         sessionStorage.setItem("GUID", res2.GUID);
@@ -29,10 +29,15 @@ var LogIn = new Vue({
             )
         },
         Register: function() {
-            var Url = "https://www.HaoShiang.somee.com/Public/Register.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord + "&ChinName=" + this.ChinNme;
+            var CheckAns = this.CheckObj();
+            if(CheckAns != ""){
+                alert(CheckAns)
+                return;
+            }
+            var Url = "https://www.HaoShiang.somee.com/Public/Register.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord + "&ChinName=" + this.ChinName;
             this.$http.get(Url).then(
                 function(response){
-                    var res = response.body;
+                    var res = response.data;
                     if(res.Code == "0"){
                         this.LogIn();
                     }
@@ -45,6 +50,19 @@ var LogIn = new Vue({
                     console.log(error)
                 }
             )
+        },
+        CheckObj: function() {
+            var chineseRegex = /[\u4e00-\u9fa5]/;
+            if(chineseRegex.test(this.UserName) == true){
+                return "帳號不得有中文字";
+            }
+            if(chineseRegex.test(this.PassWord) == true){
+                return "密碼不得有中文字";
+            }
+            if(chineseRegex.test(this.ChinName) == false){
+                return "姓名不得有非中文字";
+            }
+            return "";
         },
     },
 })

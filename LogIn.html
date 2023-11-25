@@ -31,7 +31,7 @@
                             中文姓名：
                         </th>
                         <td>
-                            <input class="input-box" type="text" v-model="Name" />
+                            <input class="input-box" type="text" v-model="ChinName" />
                         </td>
                     </tr>
                 </table>
@@ -40,7 +40,7 @@
                 <input v-show="!IsRegister" class="input-button" type="button" value="登入" v-on:click="LogIn()" />
                 <input v-show="!IsRegister" class="input-button" type="button" value="註冊" v-on:click="IsRegister = true" />
                 <input v-show="IsRegister" class="input-button" type="button" value="確定註冊" v-on:click="Register()"/>
-                <input v-show="IsRegister" class="input-button" type="button" value="取消註冊" v-on:click="IsRegister = false;Name = ''" />
+                <input v-show="IsRegister" class="input-button" type="button" value="取消註冊" v-on:click="IsRegister = false;ChinName = ''" />
             </div>
         </div>
         
