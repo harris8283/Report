@@ -12,6 +12,7 @@ body{
     flex-direction: column;
 }
 .menu-item {
+    cursor: pointer;
     text-align: center;
     margin: 0.5em;
     font-size: 1.5em;
@@ -32,7 +33,11 @@ body{
     align-items: center;
     font-size: 1.5em;
 }
-.Store_img {
+.item-pointer {
+    cursor: pointer;
+}
+img {
+    width: 10em;
     margin: 0 0 1em 0;
 }
 .hover-effect:hover {

@@ -4,6 +4,7 @@ body {
     background-color: #FAE6B1;
 }
 .Index-input{
+    cursor: pointer;
     font-size: 1.5em;
     margin: 1em;
 }
