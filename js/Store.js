@@ -37,7 +37,7 @@ var Store = new Vue({
                     var res = response.data;
                     if(res.Code == 0){
                         this.CommodityList = res.Data;
-                        console.log(this.CommodityList);
+                        console.log(this.CommodityList)
                     }
                     else{
                         alert(res.Message)

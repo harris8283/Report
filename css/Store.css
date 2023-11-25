@@ -33,11 +33,18 @@ body{
     align-items: center;
     font-size: 1.5em;
 }
+.item-column div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .item-pointer {
     cursor: pointer;
 }
 img {
     width: 10em;
+    height: 15em;
     margin: 0 0 1em 0;
 }
 .hover-effect:hover {
