@@ -33,3 +33,16 @@ body {
     color: #FAE6B1;
     text-decoration: underline;
 }
+.cart-container {
+    position: relative;
+  }
+.cart-badge {
+    position: absolute;
+    top: 10px; /* 調整垂直位置 */
+    right: 10px; /* 調整水平位置 */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
+  }

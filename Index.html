@@ -13,7 +13,10 @@
                 <span class="Index-input hover-effect" v-on:click="History()">熱量計算</span>
             </div>
             <div>
-                <i class="fa-solid fa-cart-shopping Index-input" title="購物車" v-on:click="ShoppingCart()"></i>
+                <div class="cart-container">
+                    <i class="fa-solid fa-cart-shopping Index-input" title="購物車" v-on:click="ShoppingCart()"></i>
+                    <div class="cart-badge" v-if="cartItemCount != 0">{{cartItemCount}}</div>
+                </div>
                 <span v-show="!IsRegister" class="Index-input hover-effect" v-on:click="LogIn()" v-if="GUID == '' && ChinName == ''">登入</span>
                 <span v-show="!IsRegister" class="Index-input hover-effect" v-on:click="LogOut()" v-else>登出</span>
             </div>
