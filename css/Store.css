@@ -23,6 +23,7 @@ body{
 }
 .item-row {
     display: flex;
+    flex-direction: row;
     width: 100%;
 }
 .item-column {

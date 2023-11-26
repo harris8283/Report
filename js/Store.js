@@ -3,7 +3,6 @@ var Store = new Vue({
     data: {
         ItemList: [],
         CommodityList: [],
-        ItemType: '',
     },
     mounted: function() {
         this.init();
@@ -18,8 +17,7 @@ var Store = new Vue({
                     var res = response.data;
                     if(res.Code == 0){
                         this.ItemList = res.Data;
-                        this.ItemType = res.Data[0].Type;
-                        this.GetCommodity();
+                        this.GetCommodity(res.Data[0].Type);
                     }
                     else{
                         alert(res.Message)
@@ -31,13 +29,12 @@ var Store = new Vue({
                 },
             )
         },
-        GetCommodity:function() {
-            this.$http.post("https://www.HaoShiang.somee.com/Public/GetCommodity.ashx?Type=" + this.ItemType).then(
+        GetCommodity:function(Type) {
+            this.$http.post("https://www.HaoShiang.somee.com/Public/GetCommodity.ashx?Type=" + Type).then(
                 function(response){
                     var res = response.data;
                     if(res.Code == 0){
                         this.CommodityList = res.Data;
-                        console.log(this.CommodityList)
                     }
                     else{
                         alert(res.Message)
