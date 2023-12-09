@@ -4,7 +4,7 @@ var Index = new Vue({
         GUID: '',
         ChinName: '',
         IsRegister: false,
-        cartItemCount : 0,
+        cartItem : [],
     },
     mounted: function() {
         this.init();
