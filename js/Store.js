@@ -3,6 +3,8 @@ var Store = new Vue({
     data: {
         ItemList: [],
         CommodityList: [],
+        CommodityIndex: "",
+        
     },
     mounted: function() {
         this.init();

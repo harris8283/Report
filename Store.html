@@ -7,6 +7,28 @@
 </head>
 <body>
     <div id="Store">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1  v-if="CommodityIndex != ''" class="modal-title fs-5" id="staticBackdropLabel">{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div v-if="CommodityIndex != ''">
+                        <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+              </div>
+            </div>
+        </div>
         <div class="store-main">
             <div class="menu">
                 <span v-for="item in ItemList" class="menu-item hover-effect" v-on:click="GetCommodity(item.Type)">
@@ -14,10 +36,10 @@
                 </span>
             </div>
             <div class="menu item">
-                <div class="item-row" v-for="item in CommodityList">
-                    <div class="item-column" v-for="item1 in item">
-                        <div v-for="item2 in item1">
-                            <img class="item-pointer" v-bind:src="'img/' + item2.ImgName" />
+                <div class="item-row" v-for="(item, index) in CommodityList">
+                    <div class="item-column" v-for="(item1, index1) in item">
+                        <div v-for="(item2, index2) in item1">
+                            <img class="item-pointer" v-bind:src="'img/' + item2.ImgName" v-on:click="CommodityIndex = index.toString() + index1.toString() + index2.toString()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
                             {{item2.Name}}
                         </div>
                     </div>
@@ -28,8 +50,10 @@
 </body>
 </html>
 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/Store.css" />
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/Store.js"></script>
