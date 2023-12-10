@@ -63,18 +63,48 @@ var Store = new Vue({
                 Index.LogIn();
             }
             else{
-                var obj = {
-                    NameGUID: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID,
-                    Name: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Name,
-                    Amount: this.CommodityCount,
-                    Heat: this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat),
-                    Price: this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount),
-                };
-                Index.cartItem.push(obj);
+                var IsExist = false;
+                for(var i = 0; i < Index.cartItem.length; i++){
+                    if(Index.cartItem[i].NameGUID == this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID){
+                        IsExist = true;
+                        Index.cartItem[i].Amount += this.CommodityCount;
+                        Index.cartItem[i].Heat += this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat);
+                        Index.cartItem[i].Price += this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount);
+                        break;
+                    }
+                }
+                if(IsExist == false){
+                    var obj = {
+                        NameGUID: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID,
+                        Name: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Name,
+                        Amount: this.CommodityCount,
+                        Heat: this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat),
+                        Price: this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount),
+                    };
+                    Index.cartItem.push(obj);
+                }
             }
             this.CommodityIndex = "";
             this.CommodityCount = 1;
             $("#Cancel_Modal").click();
+            this.InsertShoppingCar();
+        },
+        InsertShoppingCar: function() {
+            this.$http.post("http://localhost:52150/Public/InsertShoppingCar.ashx?UserGUID=" + Index.GUID, JSON.stringify(Item.cartItem)).then(
+                function(response){
+                    var res = response.data;
+                    if(res.Code == 0){
+                        Index.GetShoppingCar();
+                    }
+                    else{
+                        alert(res.Message)
+                    }
+                },
+                function(error){
+                    alert("購物車新增資料失敗")
+                    console.log(error);
+                },
+            )
         },
     }
 })
