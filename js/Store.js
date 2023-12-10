@@ -4,7 +4,8 @@ var Store = new Vue({
         ItemList: [],
         CommodityList: [],
         CommodityIndex: "",
-        
+        CommodityCount: 1,
+
     },
     mounted: function() {
         this.init();
@@ -47,6 +48,27 @@ var Store = new Vue({
                     console.log(error);
                 },
             )
+        },
+        CommodityCountDown: function() {
+            if(this.CommodityCount - 1 > 0){
+                this.CommodityCount--;
+            }
+        },
+        CommodityCountUp: function() {
+            this.CommodityCount++;
+        },
+        CarAdd: function() {
+            if(Index.GUID == '' && Index.ChinName == ''){
+                alert("請先登入")
+                $("#Cancel_Modal").click();
+                Index.LogIn();
+            }
+            else{
+                var obj = {
+
+                };
+                Index.cartItem.push(obj);
+            }
         },
     }
 })

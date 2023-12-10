@@ -12,19 +12,21 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h1  v-if="CommodityIndex != ''" class="modal-title fs-5" id="staticBackdropLabel">{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div v-if="CommodityIndex != ''">
+                <div class="modal-body" v-if="CommodityIndex != ''">
+                    <div>
                         <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
                     </div>
                     <div>
-
+                        <span>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</span>
+                        <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
+                        {{CommodityCount}}
+                        <input class="Cart_Input" type="button" value="+" v-on:click="CommodityCountUp()" /> 
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" v-on:click="CommodityIndex = ''" id="Cancel_Modal">取消</button>
+                  <button type="button" class="btn btn-primary" v-on:click="CarAdd()">加入購物車</button>
                 </div>
               </div>
             </div>
@@ -51,6 +53,7 @@
 </html>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/ShoppingCart.css" />
 <link rel="stylesheet" href="css/Store.css" />
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
