@@ -60,15 +60,21 @@ var Store = new Vue({
         CarAdd: function() {
             if(Index.GUID == '' && Index.ChinName == ''){
                 alert("請先登入")
-                $("#Cancel_Modal").click();
                 Index.LogIn();
             }
             else{
                 var obj = {
-
+                    Drink_GUID: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID,
+                    Drink_Name: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Name,
+                    Amount: this.CommodityCount,
+                    Heat: this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat),
+                    Price: this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount),
                 };
                 Index.cartItem.push(obj);
             }
+            this.CommodityIndex = "";
+            this.CommodityCount = 1;
+            $("#Cancel_Modal").click();
         },
     }
 })
