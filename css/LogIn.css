@@ -30,6 +30,7 @@ body{
     background-color: #FFFFFF;
 }
 .input-button{
+    cursor: pointer;
     width: auto;
     height: 3rem;
     border-radius: 1rem;

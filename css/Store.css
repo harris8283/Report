@@ -52,3 +52,30 @@ img {
     color: #FAE6B1;
     text-decoration: underline;
 }
+.modal-body-2 {
+    display: flex;
+    background-color: #FAE6B1;
+    justify-content: space-around;
+}
+.item-infor {
+    text-align: left;
+}
+.item-infor h1, .item-infor div {
+    text-align: center;
+    justify-content: center;
+}
+.Cart_Input {
+    margin: 1em;
+    background-color: #FAE6B1; /* 设置背景颜色 */
+    color: black; /* 设置文字颜色 */
+    padding: 10px 20px; /* 设置内边距 */
+    border-radius: 5px;
+    font-size: 2em;
+    border: none;
+}
+.Cart_Input:hover {
+    background-color: #FFA101; /* 鼠标悬停时的背景颜色 */
+}
+.count-size {
+    font-size: 1.5em;
+}

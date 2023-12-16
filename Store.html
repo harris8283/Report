@@ -10,21 +10,23 @@
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-body" v-if="CommodityIndex != ''">
+                <div class="modal-body modal-body-2" v-if="CommodityIndex != ''">
                     <div>
                         <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
                     </div>
-                    <div>
-                        <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
-                        <span>規格：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</span>
-                        <span>熱量：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Heat}}</span>
-                        <span>種類：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].TypeName}}</span>
-                        <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
-                        {{CommodityCount}}
-                        <input class="Cart_Input" type="button" value="+" v-on:click="CommodityCountUp()" /> 
+                    <div class="item-infor">
+                        <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1><br>
+                        <h5>大小/甜度：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</h5>
+                        <h5>熱量：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Heat}}</h5>
+                        <h5>種類：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].TypeName}}</h5>
+                        <div>
+                            <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
+                            <span class="count-size">{{CommodityCount}}</span>
+                            <input class="Cart_Input" type="button" value="+" v-on:click="CommodityCountUp()" /> 
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer modal-body-2">
                   <button type="button" class="btn btn-primary" data-bs-dismiss="modal" v-on:click="CommodityIndex = ''" id="Cancel_Modal">取消</button>
                   <button type="button" class="btn btn-primary" v-on:click="CarAdd()">加入購物車</button>
                 </div>
@@ -53,7 +55,6 @@
 </html>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/ShoppingCart.css" />
 <link rel="stylesheet" href="css/Store.css" />
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
