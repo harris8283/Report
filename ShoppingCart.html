@@ -21,37 +21,37 @@
                         卡路里
                     </th>
                 </tr>
-                <tr>
+                <tr v-for="(item, index) in CartItem">
                     <td>
-                       <input class="Cart_Input" type="button" value="-" />
-                       1
-                       <input class="Cart_Input" type="button" value="+" /> 
+                       <input class="Cart_Input" type="button" value="-" v-on:click="ReduceAmount(index)" />
+                       {{item.Amount}}
+                       <input class="Cart_Input" type="button" value="+" v-on:click="AddAmount(index)" /> 
                     </td>
                     <td>
-                        名稱
+                        {{item.Name}}
                     </td>
                     <td>
-                        金額
+                        {{(item.Amount * item.Price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
                     </td>
                     <td>
-                        卡路里
+                        {{(item.Amount * item.Heat).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
                     </td>
                 </tr>
-                <tr>
+                <tr v-if="TotalPrice != 0 && TotalHeat != 0">
                     <td></td>
                     <td></td>
                     <td>
-                        金額
+                        {{TotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
                     </td>
                     <td>
-                        卡路里
+                        {{TotalHeat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
                     </td>
                 </tr>
             </table>
         </div>
         <div class="Cart-bottom">
             <input type="button" value="結帳" />
-            <input type="button" value="返回賣場" />
+            <input type="button" value="返回賣場" v-on:click="BackStore()" />
         </div>
     </div>
 </body>

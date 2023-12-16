@@ -15,7 +15,7 @@ var Store = new Vue({
             this.GetCommodityItem();
         },
         GetCommodityItem: function() {
-            this.$http.post("https://www.HaoShiang.somee.com/Public/GetCommodityItem.ashx").then(
+            this.$http.post(Index.Url + "GetCommodityItem.ashx").then(
                 function(response){
                     var res = response.data;
                     if(res.Code == 0){
@@ -33,7 +33,7 @@ var Store = new Vue({
             )
         },
         GetCommodity:function(Type) {
-            this.$http.post("https://www.HaoShiang.somee.com/Public/GetCommodity.ashx?Type=" + Type).then(
+            this.$http.post(Index.Url + "GetCommodity.ashx?Type=" + Type).then(
                 function(response){
                     var res = response.data;
                     if(res.Code == 0){
@@ -90,7 +90,7 @@ var Store = new Vue({
             this.InsertShoppingCar();
         },
         InsertShoppingCar: function() {
-            this.$http.post("http://localhost:52150/Public/InsertShoppingCar.ashx?UserGUID=" + Index.GUID, JSON.stringify(Item.cartItem)).then(
+            this.$http.post(Index.Url + "InsertShoppingCar.ashx?UserGUID=" + Index.GUID, JSON.stringify(Index.cartItem)).then(
                 function(response){
                     var res = response.data;
                     if(res.Code == 0){

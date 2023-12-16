@@ -8,7 +8,7 @@ var LogIn = new Vue({
     },
     methods: {
         LogIn: function() {
-            var Url = "https://www.HaoShiang.somee.com/Public/LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
+            var Url = Index.Url + "LogIn.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord;
             this.$http.get(Url).then(
                 function(response){
                     var res = response.data;
@@ -34,7 +34,7 @@ var LogIn = new Vue({
                 alert(CheckAns)
                 return;
             }
-            var Url = "https://www.HaoShiang.somee.com/Public/Register.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord + "&ChinName=" + this.ChinName;
+            var Url = Index.Url + "Register.ashx?UserName=" + this.UserName + "&PassWord=" + this.PassWord + "&ChinName=" + this.ChinName;
             this.$http.get(Url).then(
                 function(response){
                     var res = response.data;

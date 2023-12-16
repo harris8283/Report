@@ -10,15 +10,15 @@
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h1  v-if="CommodityIndex != ''" class="modal-title fs-5" id="staticBackdropLabel">{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
-                </div>
                 <div class="modal-body" v-if="CommodityIndex != ''">
                     <div>
                         <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
                     </div>
                     <div>
-                        <span>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</span>
+                        <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
+                        <span>規格：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</span>
+                        <span>熱量：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Heat}}</span>
+                        <span>種類：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].TypeName}}</span>
                         <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
                         {{CommodityCount}}
                         <input class="Cart_Input" type="button" value="+" v-on:click="CommodityCountUp()" /> 

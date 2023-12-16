@@ -1,6 +1,8 @@
 var Index = new Vue({
     el: '#Index',
     data: {
+        Url: 'http://localhost:52150/Public/',
+        //Url: 'https://www.HaoShiang.somee.com/Public/',
         GUID: '',
         ChinName: '',
         IsRegister: false,
@@ -45,7 +47,7 @@ var Index = new Vue({
         },
         GetShoppingCar: function() {
             if(this.GUID != "" && this.ChinName != ""){
-                this.$http.get("https://www.HaoShiang.somee.com/Public/GetShoppingCar.ashx?UserGUID=" + this.GUID).then(
+                this.$http.get(this.Url + "GetShoppingCar.ashx?UserGUID=" + this.GUID).then(
                     function(response){
                         var res = response.data;
                         if(res.Code == 0){
