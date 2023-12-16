@@ -1,8 +1,8 @@
 var Index = new Vue({
     el: '#Index',
     data: {
-        Url: 'http://localhost:52150/Public/',
-        //Url: 'https://www.HaoShiang.somee.com/Public/',
+        //Url: 'http://localhost:52150/Public/',
+        Url: 'https://www.HaoShiang.somee.com/Public/',
         GUID: '',
         ChinName: '',
         IsRegister: false,
