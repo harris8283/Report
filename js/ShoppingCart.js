@@ -51,7 +51,23 @@ var ShoppingCart = new Vue({
             Store.InsertShoppingCar();
         },
         BackStore: function() {
-            $("#Detail").load("Store.html");
+            Index.Store();
+        },
+        Checkout: function() {
+            this.$http.get(Index.Url + "Checkout.ashx?UserGUID=" + Index.GUID).then(
+                function(response){
+                    var res = response.data;
+                    if(res.Code == "0"){
+                        Index.Store();
+                        Index.GetShoppingCar();
+                    }
+                    alert(res.Message)
+                },
+                function(error){
+                    alert("購買失敗")
+                    console.log(error)
+                }
+            )
         },
     }
 })

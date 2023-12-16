@@ -11,12 +11,12 @@
             <div class="date-block">
                 <div>
                     <label for="startdate">起始日：</label>                
-                    <input id="startdate" type="date" v-model="StartDate" />
+                    <input id="startdate" type="date" v-model="StartDate" v-on:change="TimeChange()" />
                 </div>
                 
                 <div>
                     <label for="enddate">結束日：</label>
-                    <input id="enddate" type="date" v-model="EndDate" />
+                    <input id="enddate" type="date" v-model="EndDate" v-on:change="TimeChange()" />
                 </div>
                 
             </div>
@@ -44,6 +44,29 @@
                         </th>
                         <th>
                             總價錢
+                        </th>
+                    </tr>
+                    <tr v-for="item in HistoryList">
+                        <th>
+                            {{item.CreateTime}}
+                        </th>
+                        <th>
+                            {{item.Name}}
+                        </th>
+                        <th>
+                            {{item.Amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </th>
+                        <th>
+                            {{item.Heat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </th>
+                        <th>
+                            {{item.TotalHeat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </th>
+                        <th>
+                            {{item.Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </th>
+                        <th>
+                            {{item.TotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
                         </th>
                     </tr>
                 </table>
