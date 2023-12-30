@@ -47,27 +47,40 @@
                         </th>
                     </tr>
                     <tr v-for="item in HistoryList">
-                        <th>
+                        <td>
                             {{item.CreateTime}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.Name}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.Amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.Heat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.TotalHeat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             {{item.TotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
-                        </th>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>總計</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            {{TotalHeat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </td>
+                        <td></td>
+                        <td>
+                            {{TotalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}
+                        </td>
                     </tr>
                 </table>
             </div>

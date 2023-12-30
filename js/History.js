@@ -4,6 +4,8 @@ var History = new Vue({
         StartDate: '',
         EndDate: '',
         HistoryList: [],
+        TotalHeat: 0,
+        TotalPrice: 0,
     },
     mounted: function() {
         this.init();
@@ -39,6 +41,7 @@ var History = new Vue({
                     var res = response.data;
                     if(res.Code == "0"){
                         this.HistoryList = res.Data;
+                        this.GetTotal();
                     }
                     else{
                         alert(res.Message)
@@ -58,6 +61,12 @@ var History = new Vue({
             }
             else{
                 this.GetHistoryList();
+            }
+        },
+        GetTotal: function(){
+            for(var i = 0 ; i < this.HistoryList.length; i++){
+                this.TotalHeat = this.TotalHeat + this.HistoryList[i].TotalHeat;
+                this.TotalPrice = this.TotalPrice + this.HistoryList[i].TotalPrice;
             }
         },
     },
