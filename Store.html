@@ -35,7 +35,7 @@
         </div>
         <div class="store-main">
             <div class="menu">
-                <span v-for="item in ItemList" class="menu-item hover-effect" v-on:click="GetCommodity(item.Type)">
+                <span v-for="item in ItemList" v-bind:id="item.Name + '_span'" class="menu-item hover-effect" v-on:click="GetCommodity(item.Type)">
                     {{item.Name}}
                 </span>
             </div>

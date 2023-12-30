@@ -35,10 +35,14 @@ var Index = new Vue({
         },
         Store: function() {
             this.IsRegister = false;
+            $("#Store_span").css("color","#FAE6B1");
+            $("#History_span").css("color","");
             $("#Detail").load("Store.html");
         },
         History: function() {
             this.IsRegister = false;
+            $("#Store_span").css("color","");
+            $("#History_span").css("color","#FAE6B1");
             $("#Detail").load("History.html");
         },
         ShoppingCart: function() {

@@ -7,6 +7,9 @@ var Store = new Vue({
         CommodityCount: 1,
 
     },
+    created: function() {
+        $("#茶類_span").css("color", "#FAE6B1");
+    },
     mounted: function() {
         this.init();
     },
