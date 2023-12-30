@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FAE6B1;
+    background-color: #FFFFFF;
 }
 .Index-input{
     cursor: pointer;
@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #FFA101;
+    font-size: 1.5em;
 }
 .top-bar div {
     display: flex;

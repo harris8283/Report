@@ -3,28 +3,32 @@ body{
     margin: 0;
 }
 .store-main {
-    display: flex;
+    display: inline-block;
+    width: auto;
     justify-content: center;
 }
 .menu {
-    display: flex;
+    padding: 1em;
     background-color: #FFA101;
     flex-direction: column;
+    text-align: center;
 }
 .menu-item {
     cursor: pointer;
     text-align: center;
-    margin: 0.5em;
-    font-size: 1.5em;
+    margin: 1em;
+    font-size: 2em;
+    align-content: center;
 }
 .item {
     width: auto;
-    background-color: #B3DEE5;
+    background-color: #FAE6B1;
 }
 .item-row {
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
 }
 .item-column {
     padding: 1em;
@@ -78,4 +82,8 @@ img {
 }
 .count-size {
     font-size: 1.5em;
+}
+#Store {
+    display: flex;
+    justify-content: center;
 }
