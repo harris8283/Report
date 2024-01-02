@@ -10,24 +10,26 @@
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
+                <div class="modal-header modal-Define-CSS" v-if="CommodityIndex != ''">
+                    <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
+                </div>
                 <div class="modal-body modal-body-2" v-if="CommodityIndex != ''">
                     <div>
                         <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
                     </div>
                     <div class="item-infor">
-                        <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1><br>
                         <h5>大小/甜度：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</h5>
                         <h5>熱量：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Heat}}</h5>
                         <h5>種類：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].TypeName}}</h5>
                         <div>
                             <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
-                            <span class="count-size">{{CommodityCount}}</span>
+                            <input type="text" class="count-size" v-model="CommodityCount" />
                             <input class="Cart_Input" type="button" value="+" v-on:click="CommodityCountUp()" /> 
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer modal-body-2">
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" v-on:click="CommodityIndex = ''" id="Cancel_Modal">取消</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" v-on:click="CommodityIndex = ''; CommodityCount = 1" id="Cancel_Modal">取消</button>
                   <button type="button" class="btn btn-primary" v-on:click="CarAdd()">加入購物車</button>
                 </div>
               </div>
@@ -35,7 +37,10 @@
         </div>
         <div class="store-main">
             <div class="menu">
-                <span v-for="item in ItemList" v-bind:id="item.Name + '_span'" class="menu-item hover-effect" v-on:click="GetCommodity(item.Type)">
+                <span v-if="index == 0" v-for="(item, index) in ItemList" v-bind:id="item.Name + '_span'" class="menu-item hover-effect" style="color: #FAE6B1;" v-on:click="GetCommodity(item.Name, item.Type)">
+                    {{item.Name}}
+                </span>
+                <span v-if="index != 0" v-for="(item, index) in ItemList" v-bind:id="item.Name + '_span'" class="menu-item hover-effect" v-on:click="GetCommodity(item.Name, item.Type)">
                     {{item.Name}}
                 </span>
             </div>

@@ -8,7 +8,7 @@
 <body>
     <div id="ShoppingCart">
         <div>
-            <table class="Cart-table">
+            <table class="table table-striped Cart-table">
                 <tr>
                     <th></th>
                     <th>
@@ -51,14 +51,16 @@
         </div>
         <div class="Cart-bottom">
             <input type="button" value="返回目錄" v-on:click="BackStore()" />
-            <input type="button" value="下訂" v-on:click="Checkout()" />
+            <input type="button" value="加入統計" v-on:click="Checkout()" />
         </div>
     </div>
 </body>
 </html>
 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/ShoppingCart.css" />
 <script src="js/vue.js"></script>
 <script src="js/vue-resource.js"></script>
 <script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/ShoppingCart.js"></script>

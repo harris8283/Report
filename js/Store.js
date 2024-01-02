@@ -7,9 +7,6 @@ var Store = new Vue({
         CommodityCount: 1,
 
     },
-    created: function() {
-        $("#茶類_span").css("color", "#FAE6B1");
-    },
     mounted: function() {
         this.init();
     },
@@ -23,7 +20,7 @@ var Store = new Vue({
                     var res = response.data;
                     if(res.Code == 0){
                         this.ItemList = res.Data;
-                        this.GetCommodity(res.Data[0].Type);
+                        this.GetCommodity(res.Data[0].Name, res.Data[0].Type);
                     }
                     else{
                         alert(res.Message)
@@ -35,7 +32,11 @@ var Store = new Vue({
                 },
             )
         },
-        GetCommodity:function(Type) {
+        GetCommodity:function(Name, Type) {
+            for(var i = 0 ; i < this.ItemList.length;i++){
+                $("#" + this.ItemList[i].Name + "_span").css("color", "");
+            }
+            $("#" + Name + "_span").css("color", "#FAE6B1");
             this.$http.post(Index.Url + "GetCommodity.ashx?Type=" + Type).then(
                 function(response){
                     var res = response.data;
@@ -63,7 +64,9 @@ var Store = new Vue({
         CarAdd: function() {
             if(Index.GUID == '' && Index.ChinName == ''){
                 alert("請先登入")
+                $("#Cancel_Modal").click();
                 Index.LogIn();
+                return;
             }
             else{
                 var IsExist = false;

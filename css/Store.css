@@ -83,8 +83,14 @@ img {
 }
 .count-size {
     font-size: 1.5em;
+    max-width: 15%;
 }
 #Store {
     display: flex;
     justify-content: center;
+}
+.modal-Define-CSS{
+    display: flex;
+    justify-content: center;
+    background-color: #FAE6B1;
 }

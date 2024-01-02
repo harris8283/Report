@@ -11,7 +11,7 @@ body {
 }
 .Cart-table tr td {
     margin: 1em;
-    border-bottom: 1px solid black;
+    vertical-align: middle;
 }
 .Cart_Input {
     margin: 1em;
