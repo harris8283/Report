@@ -67,6 +67,7 @@ img {
 .item-infor h1, .item-infor div {
     text-align: center;
     justify-content: center;
+    padding-top: 0.5em;
 }
 .Cart_Input {
     margin: 1em;

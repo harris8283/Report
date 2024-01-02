@@ -15,6 +15,21 @@ body {
 }
 .Cart_Input {
     margin: 1em;
+    background-color: #B3DEE5; /* 更改背景顏色 */
+    border: none; /* 移除邊框 */
+    color: black; /* 更改文字顏色 */
+    padding: 0.1em 0.5em; /* 更改填充 */
+    text-align: center; /* 文字置中 */
+    text-decoration: none; /* 移除文字裝飾 */
+    display: inline-block;
+    font-size: 1em; /* 更改字體大小 */
+    transition-duration: 0.4s; /* 添加過渡動畫 */
+    cursor: pointer;
+    border-radius: 5px;
+}
+.Cart_Input:hover {
+    background-color: #6db6c1; /* 滑鼠懸停時的背景顏色 */
+    color: white; /* 滑鼠懸停時的文字顏色 */
 }
 .Cart-bottom {
     display: flex;
@@ -23,4 +38,19 @@ body {
 .Cart-bottom input {
     font-size: 1.5em;
     margin: 1em;
+    background-color: #B3DEE5; /* 更改背景顏色 */
+    border: none; /* 移除邊框 */
+    color: black; /* 更改文字顏色 */
+    padding: 0.1em 0.5em; /* 更改填充 */
+    text-align: center; /* 文字置中 */
+    text-decoration: none; /* 移除文字裝飾 */
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Cart-bottom input:hover{
+    background-color: #6db6c1; /* 滑鼠懸停時的背景顏色 */
+    color: white; /* 滑鼠懸停時的文字顏色 */
+}
+.main-buttom {
+    background-color: blue;
 }
