@@ -71,21 +71,21 @@ var Store = new Vue({
             else{
                 var IsExist = false;
                 for(var i = 0; i < Index.cartItem.length; i++){
-                    if(Index.cartItem[i].NameGUID == this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID){
+                    if(Index.cartItem[i].NameGUID == this.CommodityList[this.CommodityIndex[0]].GUID){
                         IsExist = true;
                         Index.cartItem[i].Amount += this.CommodityCount;
-                        Index.cartItem[i].Heat += this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat);
-                        Index.cartItem[i].Price += this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount);
+                        Index.cartItem[i].Heat += this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]].Heat);
+                        Index.cartItem[i].Price += this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]].Amount);
                         break;
                     }
                 }
                 if(IsExist == false){
                     var obj = {
-                        NameGUID: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].GUID,
-                        Name: this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Name,
+                        NameGUID: this.CommodityList[this.CommodityIndex[0]].GUID,
+                        Name: this.CommodityList[this.CommodityIndex[0]].Name,
                         Amount: this.CommodityCount,
-                        Heat: this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Heat),
-                        Price: this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]][this.CommodityIndex[1]][this.CommodityIndex[2]].Amount),
+                        Heat: this.CommodityCount * parseFloat(this.CommodityList[this.CommodityIndex[0]].Heat),
+                        Price: this.CommodityCount * parseInt(this.CommodityList[this.CommodityIndex[0]].Amount),
                     };
                     Index.cartItem.push(obj);
                 }

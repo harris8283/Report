@@ -21,24 +21,15 @@ body{
     align-content: center;
 }
 .item {
-    width: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
     background-color: #FAE6B1;
 }
 .item-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-}
-.item-column {
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-}
-.item-column div {
     display: flex;
     flex-direction: column;
     justify-content: center;

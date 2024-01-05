@@ -24,6 +24,10 @@ var Index = new Vue({
         },
         LogIn: function() {
             this.IsRegister = true;
+            $("#Store_span").css("color","");
+            $("#History_span").css("color","");
+            $("#ShoppingCart_i").removeClass("fa-solid");
+            $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("LogIn.html");
         },
         LogOut: function() {
@@ -37,16 +41,24 @@ var Index = new Vue({
             this.IsRegister = false;
             $("#Store_span").css("color","#FAE6B1");
             $("#History_span").css("color","");
+            $("#ShoppingCart_i").removeClass("fa-solid");
+            $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("Store.html");
         },
         History: function() {
             this.IsRegister = false;
             $("#Store_span").css("color","");
             $("#History_span").css("color","#FAE6B1");
+            $("#ShoppingCart_i").removeClass("fa-solid");
+            $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("History.html");
         },
         ShoppingCart: function() {
             this.IsRegister = false;
+            $("#Store_span").css("color","");
+            $("#History_span").css("color","");
+            $("#ShoppingCart_i").addClass("fa-solid");
+            $("#ShoppingCart_i").removeClass("fa-regular");
           $("#Detail").load("ShoppingCart.html");  
         },
         GetShoppingCar: function() {

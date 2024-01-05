@@ -11,16 +11,16 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header modal-Define-CSS" v-if="CommodityIndex != ''">
-                    <h1>{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Name}}</h1>
+                    <h1>{{CommodityList[CommodityIndex[0]].Name}}</h1>
                 </div>
                 <div class="modal-body modal-body-2" v-if="CommodityIndex != ''">
                     <div>
-                        <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].ImgName" />
+                        <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]].ImgName" />
                     </div>
                     <div class="item-infor">
-                        <h5>大小/甜度：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Desc}}</h5>
-                        <h5>熱量：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].Heat}}</h5>
-                        <h5>種類：{{CommodityList[CommodityIndex[0]][CommodityIndex[1]][CommodityIndex[2]].TypeName}}</h5>
+                        <h5>大小/甜度：{{CommodityList[CommodityIndex[0]].Desc}}</h5>
+                        <h5>熱量：{{CommodityList[CommodityIndex[0]].Heat}}</h5>
+                        <h5>種類：{{CommodityList[CommodityIndex[0]].TypeName}}</h5>
                         <div>
                             <input class="Cart_Input" type="button" value="-" v-on:click="CommodityCountDown()" />
                             <input type="text" class="count-size" v-model="CommodityCount" />
@@ -46,12 +46,8 @@
             </div>
             <div class="menu item">
                 <div class="item-row" v-for="(item, index) in CommodityList">
-                    <div class="item-column" v-for="(item1, index1) in item">
-                        <div v-for="(item2, index2) in item1">
-                            <img class="item-pointer" v-bind:src="'img/' + item2.ImgName" v-on:click="CommodityIndex = index.toString() + index1.toString() + index2.toString()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
-                            {{item2.Name}}
-                        </div>
-                    </div>
+                    <img class="item-pointer" v-bind:src="'img/' + item.ImgName" v-on:click="CommodityIndex = index.toString()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
+                    {{item.Name}}
                 </div>
             </div>
         </div>
