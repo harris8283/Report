@@ -8,6 +8,11 @@ body {
     font-size: 1.5em;
     margin: 1em;
 }
+.Index-input-320{
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 1em;
+}
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -16,7 +21,7 @@ body {
 }
 .top-bar div {
     display: flex;
-    align-items: center;
+    align-items:center;
 }
 .footer {
     padding: 0.5em;
@@ -46,4 +51,42 @@ body {
     border-radius: 50%;
     padding: 5px 8px;
     font-size: 12px;
-  }
+}
+.mobile-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 320px) {
+    .Index-input{
+        font-size: 1em;
+    }
+    .Index-input-320{
+        cursor: pointer;
+        font-size: 0.7em;
+        margin: 0;
+    }
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        background-color: #FFA101;
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+    .footer {
+        padding: 0.2em;
+        font-size: 0.5em;
+    }
+    .cart-badge {
+        top: 10px; /* 調整垂直位置 */
+        right: 10px; /* 調整水平位置 */
+    }
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        background-color: #FFA101; /* Set the background color as needed */
+    }
+}

@@ -5,14 +5,28 @@ var Store = new Vue({
         CommodityList: [],
         CommodityIndex: "",
         CommodityCount: 1,
-
+        screenWidth: window.innerWidth,
+        Index: 0,
     },
     mounted: function() {
+        window.addEventListener('resize', () => {
+            this.screenWidth = window.innerWidth;
+            this.handleScreenWidthChange();
+        });
         this.init();
+    },
+    watch: {
+        screenWidth(newWidth) {
+          this.handleScreenWidthChange();
+        }
+    },
+    updated: function() {
+        this.handleScreenWidthChange();
     },
     methods: {
         init: function() {
             this.GetCommodityItem();
+            this.handleScreenWidthChange();
         },
         GetCommodityItem: function() {
             this.$http.post(Index.Url + "GetCommodityItem.ashx").then(
@@ -111,6 +125,21 @@ var Store = new Vue({
                     console.log(error);
                 },
             )
+        },
+        handleScreenWidthChange: function () {
+            var screenWidth = window.innerWidth;
+            if(screenWidth <= 320){
+                $("#selectitem").css({"display":"block"});
+                for(var i = 0 ; i < this.ItemList.length;i++){
+                    $("#" + this.ItemList[i].Name + "_span").css({"display":"none"});
+                }
+            }
+            else{
+                $("#selectitem").css({"display":"none"});
+                for(var i = 0 ; i < this.ItemList.length;i++){
+                    $("#" + this.ItemList[i].Name + "_span").css({"display":""});
+                }
+            }
         },
     }
 })

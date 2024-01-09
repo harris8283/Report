@@ -7,9 +7,20 @@ var Index = new Vue({
         ChinName: '',
         IsRegister: false,
         cartItem : [],
+        isMenuOpen: true,
+        screenWidth: window.innerWidth,
     },
     mounted: function() {
+        window.addEventListener('resize', () => {
+            this.screenWidth = window.innerWidth;
+            this.handleScreenWidthChange();
+        });
         this.init();
+    },
+    watch: {
+        screenWidth(newWidth) {
+          this.handleScreenWidthChange();
+        }
     },
     methods: {
         init: function() {
@@ -21,6 +32,7 @@ var Index = new Vue({
             }
             this.GetShoppingCar();
             $("#Detail").load("Store.html");
+            this.handleScreenWidthChange();
         },
         LogIn: function() {
             this.IsRegister = true;
@@ -29,6 +41,7 @@ var Index = new Vue({
             $("#ShoppingCart_i").removeClass("fa-solid");
             $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("LogIn.html");
+            this.handleScreenWidthChange();
         },
         LogOut: function() {
             this.IsRegister = false;
@@ -36,6 +49,7 @@ var Index = new Vue({
             this.GUID = "";
             this.ChinName = "";
             window.location.href = "Index.html";
+            this.handleScreenWidthChange();
         },
         Store: function() {
             this.IsRegister = false;
@@ -44,6 +58,7 @@ var Index = new Vue({
             $("#ShoppingCart_i").removeClass("fa-solid");
             $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("Store.html");
+            this.handleScreenWidthChange();
         },
         History: function() {
             this.IsRegister = false;
@@ -52,6 +67,7 @@ var Index = new Vue({
             $("#ShoppingCart_i").removeClass("fa-solid");
             $("#ShoppingCart_i").addClass("fa-regular");
             $("#Detail").load("History.html");
+            this.handleScreenWidthChange();
         },
         ShoppingCart: function() {
             this.IsRegister = false;
@@ -59,7 +75,8 @@ var Index = new Vue({
             $("#History_span").css("color","");
             $("#ShoppingCart_i").addClass("fa-solid");
             $("#ShoppingCart_i").removeClass("fa-regular");
-          $("#Detail").load("ShoppingCart.html");  
+          $("#Detail").load("ShoppingCart.html"); 
+          this.handleScreenWidthChange(); 
         },
         GetShoppingCar: function() {
             if(this.GUID != "" && this.ChinName != ""){
@@ -78,6 +95,20 @@ var Index = new Vue({
                         console.log(error);
                     },
                 )
+            }
+        },
+        toggleMenu: function() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+        handleScreenWidthChange: function () {
+            var screenWidth = window.innerWidth;
+            if(screenWidth <= 320){
+                this.isMenuOpen = false;
+                $("#hamburger-icon").css({"display":"block"});
+            }
+            else{
+                this.isMenuOpen = true;
+                $("#hamburger-icon").css({"display":"none"});
             }
         },
     }

@@ -43,6 +43,9 @@
                 <span v-if="index != 0" v-for="(item, index) in ItemList" v-bind:id="item.Name + '_span'" class="menu-item hover-effect" v-on:click="GetCommodity(item.Name, item.Type)">
                     {{item.Name}}
                 </span>
+                <select id="selectitem" v-model="Index" v-on:change="GetCommodity(ItemList[Index].Name, ItemList[Index].Type)">
+                    <option v-for="(item, index) in ItemList" v-bind:value="index">{{item.Name}}</option>
+                </select>
             </div>
             <div class="menu item">
                 <div class="item-row" v-for="(item, index) in CommodityList">
