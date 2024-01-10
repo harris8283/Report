@@ -120,4 +120,25 @@ img {
         justify-content: center;
         background-color: #FAE6B1;
     }
+    .item-pointer-2 {
+        max-width: 49%;
+        max-height: 49%;
+        width: auto;
+        height: auto;
+    }
+    .modal-body-2 {
+        display: block;
+        justify-content: space-around;
+    }
+    .modal-body-2-img{
+        display: flex;
+        justify-content: center;
+    }
+    .Cart_Input {
+        margin: 0.5em;
+    }
+    .modal-footer-button{
+        display: flex;
+        justify-content: center;
+    }
 }

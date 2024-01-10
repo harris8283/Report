@@ -54,3 +54,21 @@ body {
 .main-buttom {
     background-color: blue;
 }
+
+@media only screen and (max-width: 320px) {
+    .Cart-table {
+        font-size: 1em;
+    }
+    .Cart_Input {
+        margin: 0.75em;
+        padding: 0.1em 0.25em; /* 更改填充 */
+        font-size: 0.7em; /* 更改字體大小 */
+    }
+    .table-td-write{
+        writing-mode: vertical-lr;
+    }
+    .Cart-bottom input {
+        font-size: 1em;
+        margin: 0.5em;
+    }
+}

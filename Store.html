@@ -14,8 +14,8 @@
                     <h1>{{CommodityList[CommodityIndex[0]].Name}}</h1>
                 </div>
                 <div class="modal-body modal-body-2" v-if="CommodityIndex != ''">
-                    <div>
-                        <img class="item-pointer" v-bind:src="'img/' + CommodityList[CommodityIndex[0]].ImgName" />
+                    <div class="modal-body-2-img">
+                        <img class="item-pointer item-pointer-2" v-bind:src="'img/' + CommodityList[CommodityIndex[0]].ImgName" />
                     </div>
                     <div class="item-infor">
                         <h5>大小/甜度：{{CommodityList[CommodityIndex[0]].Desc}}</h5>
@@ -28,9 +28,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer modal-body-2">
+                <div class="modal-footer modal-body-2 modal-footer-button">
                   <button type="button" class="btn btn-primary" data-bs-dismiss="modal" v-on:click="CommodityIndex = ''; CommodityCount = 1" id="Cancel_Modal">取消</button>
-                  <button type="button" class="btn btn-primary" v-on:click="CarAdd()">加入購物車</button>
+                  <button type="button" class="btn btn-primary" v-on:click="CarAdd()">加入確認清單</button>
                 </div>
               </div>
             </div>

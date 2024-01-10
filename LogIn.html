@@ -9,32 +9,18 @@
     <div id="LogIn" class="LogIn">
         <div class="login-main">
             <div>
-                <table class="input-tr">
-                    <tr >
-                        <th class="title">
-                            帳號：
-                        </th>
-                        <td>
-                            <input class="input-box" type="text" v-model="UserName" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="title">
-                            密碼：
-                        </th>
-                        <td>
-                            <input class="input-box" type="password" v-model="PassWord" />
-                        </td>
-                    </tr>
-                    <tr v-show="IsRegister">
-                        <th class="title">
-                            姓名：
-                        </th>
-                        <td>
-                            <input class="input-box" type="text" v-model="ChinName" />
-                        </td>
-                    </tr>
-                </table>
+                <div>
+                    <span class="title">帳號：</span>
+                    <input class="input-box" type="text" v-model="UserName" />
+                </div>
+                <div>
+                    <span class="title">密碼：</span>
+                    <input class="input-box" type="password" v-model="PassWord" />
+                </div>
+                <div v-show="IsRegister">
+                    <span class="title">姓名：</span>
+                    <input class="input-box" type="text" v-model="ChinName" />
+                </div>
             </div>
             <div>
                 <input v-show="!IsRegister" class="input-button" type="button" value="登入" v-on:click="LogIn()" />
