@@ -10,11 +10,19 @@
 
 .main {
     width: 90%;
-    margin: 1em auto;
-    background-color: #B3DEE5;
+    margin: 1em;
+    background-color: #FFF;
 }
 .stock_list {
     text-align: center;
     width: 100%;
     padding: 1rem;
+}
+@media only screen and (max-width: 426px) {
+    .date-block div label {
+        display: block;
+    }
+    .main {
+        overflow-x: auto; /* 設定水平滾動條 */
+    }
 }

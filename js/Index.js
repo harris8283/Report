@@ -102,7 +102,7 @@ var Index = new Vue({
         },
         handleScreenWidthChange: function () {
             var screenWidth = window.innerWidth;
-            if(screenWidth <= 425){
+            if(screenWidth <= 426){
                 this.isMenuOpen = false;
                 $("#hamburger-icon").css({"display":"block"});
             }

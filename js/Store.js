@@ -128,7 +128,7 @@ var Store = new Vue({
         },
         handleScreenWidthChange: function () {
             var screenWidth = window.innerWidth;
-            if(screenWidth <= 425){
+            if(screenWidth <= 426){
                 $("#selectitem").css({"display":"block"});
                 for(var i = 0 ; i < this.ItemList.length;i++){
                     $("#" + this.ItemList[i].Name + "_span").css({"display":"none"});
