@@ -56,7 +56,7 @@ body {
     display: none;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 425px) {
     .Index-input{
         font-size: 1em;
     }

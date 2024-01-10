@@ -110,7 +110,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 425px) {
     .item {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
