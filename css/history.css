@@ -9,7 +9,7 @@
 }
 
 .main {
-    width: 90%;
+    width: 95%;
     margin: 1em;
     background-color: #FFF;
 }
@@ -23,6 +23,7 @@
         display: block;
     }
     .main {
+        width: 90%;
         overflow-x: auto; /* 設定水平滾動條 */
     }
 }
